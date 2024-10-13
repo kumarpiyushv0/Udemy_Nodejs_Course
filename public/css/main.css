@@ -16,6 +16,7 @@ main {
   padding: 1rem;
   margin: auto;
   color: #ffffff;
+  margin-top: 40px;
 }
 
 form {
@@ -34,6 +35,9 @@ form {
   padding: 0 1.5rem;
   display: flex;
   align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .main-header__nav {
@@ -150,9 +154,10 @@ form {
 }
 
 .card {
+  max-height: 50rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   border-radius: 20px;
-  background-image: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(255, 255, 255), rgb(59, 0, 0));
+  background-image: linear-gradient(to bottom right, rgb(34, 34, 34), rgb(177, 176, 176), rgb(34, 34, 34), rgb(177, 176, 176));
 }
 
 .card__header,
