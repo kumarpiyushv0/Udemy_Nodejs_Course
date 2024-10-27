@@ -66,7 +66,7 @@ form {
 .main-header__item a:hover,
 .main-header__item a:active,
 .main-header__item a.active {
-  color: #ff0606;
+  color: #a57a03;
 }
 
 .mobile-nav {
@@ -205,7 +205,7 @@ form {
 .btn:hover,
 .btn:active {
   background-color: #060606;
-  color: rgb(247, 5, 5);
+  color: #a57a03;
 }
 
 @media (min-width: 768px) {
