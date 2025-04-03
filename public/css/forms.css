@@ -1,23 +1,71 @@
 .form-control {
-    margin: 1rem 0;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #2c2c2c;
+  box-shadow: 10px 10px #222222c1;
+  border-radius: 6px;
 }
 
-.form-control label,
-.form-control input,
-.form-control textarea {
-    display: block;
-    width: 100%;
-    margin-bottom: 0.25rem;
+.form-control label {
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  display: block;
 }
 
 .form-control input,
 .form-control textarea {
-    border: 1px solid #ffffff;
-    font: inherit;
-    border-radius: 2px;
+  border: 1px solid #ccc;
+  font: inherit;
+  border-radius: 4px;
+  padding: 0.5rem;
+  width: 100%;
+  background: #fff;
+  color: #333;
+}
+
+.form-control input::placeholder,
+.form-control textarea::placeholder {
+  color: #aaa;
 }
 
 .form-control input:focus,
 .form-control textarea:focus {
-    outline-color: #a57a03;
+  outline: none;
+  border-color: #ff6f00;
+  background: #fdf8e4;
+}
+
+.form-control textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-control button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background: #a57a03;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.form-control button:hover {
+  background: #8b6702;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background: #1b1b1b;
+
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+.form-control input.invalid{
+  border-color: red;
 }

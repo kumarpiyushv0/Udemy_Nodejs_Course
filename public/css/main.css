@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
 
 * {
   box-sizing: border-box;
@@ -7,9 +7,8 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
-  background-color: #000000;
-  
+  font-family: "Open Sans", sans-serif;
+  background: #1b1b1b;
 }
 
 main {
@@ -24,14 +23,60 @@ form {
   color: #ffffff;
 }
 
-.centered{
-   text-align: center;
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url("https://d1i1eo6qmdfmdv.cloudfront.net/upload/site/pages/newslider_otherpages/LosAngeles_McLaren_Ferrari_Lambo_Combo_Slider_1800x700.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 100px 20px;
+  position: relative;
+  height: 400px;
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin: 0;
+  z-index: 1;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-top: 10px;
+  z-index: 1;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  /* Overlay for better text readability */
+  z-index: 0;
+}
+
+.hero * {
+  position: relative;
+}
+
+.centered {
+  text-align: center;
+  margin: 30px;
 }
 
 .main-header {
   width: 100%;
   height: 3.5rem;
-  background-color: #000000;
+  z-index: 99;
+  background-color: #000000d2;
   padding: 0 1.5rem;
   display: flex;
   align-items: center;
@@ -42,8 +87,10 @@ form {
 
 .main-header__nav {
   height: 100%;
-  display: none;
+  width: 100%;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .main-header__item-list {
@@ -58,15 +105,20 @@ form {
   padding: 0;
 }
 
-.main-header__item a {
+.main-header__item a,
+.main-header__item button {
+  font: inherit;
+  background: transparent;
+  border: none;
   text-decoration: none;
-  color: rgb(255, 255, 255);
+  color: white;
+  cursor: pointer;
 }
 
 .main-header__item a:hover,
 .main-header__item a:active,
 .main-header__item a.active {
-  color: #a57a03;
+  color: #a54903;
 }
 
 .mobile-nav {
@@ -131,8 +183,8 @@ form {
 
 #side-menu-toggle:active,
 #side-menu-toggle:hover {
-  color: #ffeb3b;
-  border-color: #ffeb3b;
+  color: #a54903;
+  border-color: #a54903;
 }
 
 .backdrop {
@@ -157,7 +209,8 @@ form {
   max-height: 50rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   border-radius: 20px;
-  background-image: linear-gradient(to bottom right, rgb(34, 34, 34), rgb(177, 176, 176), rgb(34, 34, 34), rgb(177, 176, 176));
+  background: #2c2c2c;
+  box-shadow: 10px 10px #222222c1;
 }
 
 .card__header,
@@ -197,15 +250,30 @@ form {
   font: inherit;
   border: 1px solid #080707;
   color: #050504;
-  background: white;
+  background: #c2661fcb;
   border-radius: 100px;
   cursor: pointer;
 }
 
 .btn:hover,
 .btn:active {
-  background-color: #060606;
-  color: #a57a03;
+  background-color: #242424d0;
+  color: #a54903;
+}
+
+.user-message {
+  margin: 10px 39%;
+  width: 90%;
+  border: 5px solid rgb(186, 255, 47);
+  padding: 0.5rem;
+  border-radius: 45px;
+  background: #000000;
+  text-align: center;
+}
+
+.user-message--error {
+  border-color: rgb(250, 62, 62);
+  background: #000000;
 }
 
 @media (min-width: 768px) {
@@ -215,5 +283,9 @@ form {
 
   #side-menu-toggle {
     display: none;
+  }
+
+  .user-message {
+    width: 20rem;
   }
 }

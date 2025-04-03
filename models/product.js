@@ -1,11 +1,11 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
 const productSchema = new Schema({
   title: {
-    type: String, 
-    required: true
+    type: String,
+    required: true,
   },
   price: {
     type: Number,
@@ -13,21 +13,20 @@ const productSchema = new Schema({
   },
   description: {
     type: String,
-    required: true
+    required: true,
   },
   imageUrl: {
     type: String,
-    required: true
+    required: true,
   },
   userId: {
     type: Schema.Types.ObjectId,
-    ref: 'User',
-    required: true
-  }
+    ref: "User",
+    required: true,
+  },
 });
 
-module.exports = mongoose.model('Product', productSchema);
-
+module.exports = mongoose.model("Product", productSchema);
 
 // const mongodb = require('mongodb');
 // const getDb = require('../util/database').getDb;
@@ -51,7 +50,7 @@ module.exports = mongoose.model('Product', productSchema);
 //     else{
 //       dbOp = db.collection('products').insertOne(this);
 //     }
-    
+
 //     return dbOp.then(result => console.log(result)).catch( err => console.log(err));
 //    }
 
