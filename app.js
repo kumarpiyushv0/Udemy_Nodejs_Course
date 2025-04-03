@@ -19,7 +19,7 @@ const flash = require("connect-flash");
 const User = require("./models/user");
 
 const MONGODB_URI =
-  "mongodb+srv://impk1103:pk339900@cluster0.yqcmj.mongodb.net/shop?retryWrites=false&w=majority&appName=Cluster0";
+  "mongodb+srv://impk1103:password@cluster0.yqcmj.mongodb.net/shop?retryWrites=false&w=majority&appName=Cluster0";
 
 const app = express();
 const store = new MongoDbStore({
