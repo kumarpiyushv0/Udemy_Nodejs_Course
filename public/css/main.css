@@ -15,7 +15,7 @@ main {
   padding: 1rem;
   margin: auto;
   color: #ffffff;
-  margin-top: 40px;
+  margin-top: 50px;
 }
 
 form {
@@ -209,7 +209,7 @@ form {
   max-height: 50rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   border-radius: 20px;
-  background: #2c2c2c;
+  background: #2a2a2a;
   box-shadow: 10px 10px #222222c1;
 }
 
@@ -288,4 +288,40 @@ form {
   .user-message {
     width: 20rem;
   }
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+  text-align: center;
+  
+}
+
+.error .emoji {
+  font-size: 5rem; 
+  margin-bottom: 1rem;
+}
+
+.pagination{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.pagination a{
+  text-decoration: none;
+  color:#a54903;
+  padding: 0.5rem;
+  border: 1px solid #000000d0;
+  margin:0 1rem;
+  border-radius: 5px;
+}
+
+.pagination a:hover,
+.pagination a:active{
+  background-color: #242424d0;
+  color: #a54903;
 }

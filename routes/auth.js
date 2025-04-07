@@ -1,8 +1,8 @@
-const path = require("path");
+const express = require("express");
 const { check, body } = require("express-validator");
+
 const authController = require("../controllers/auth");
 const User = require("../models/user");
-const express = require("express");
 
 const router = express.Router();
 
@@ -15,9 +15,9 @@ router.post(
   [
     body("email")
       .isEmail()
-      .withMessage("Please enetr a valid email")
+      .withMessage("Please enter a valid email address.")
       .normalizeEmail(),
-    body("password", "password has to be valid")
+    body("password", "Password has to be valid.")
       .isLength({ min: 5 })
       .isAlphanumeric()
       .trim(),
@@ -32,10 +32,14 @@ router.post(
       .isEmail()
       .withMessage("Please enter a valid email.")
       .custom((value, { req }) => {
+        // if (value === 'test@test.com') {
+        //   throw new Error('This email address if forbidden.');
+        // }
+        // return true;
         return User.findOne({ email: value }).then((userDoc) => {
           if (userDoc) {
             return Promise.reject(
-              "E-mail exists already, pick a different one."
+              "E-Mail exists already, please pick a different one."
             );
           }
         });
@@ -48,12 +52,14 @@ router.post(
       .isLength({ min: 5 })
       .isAlphanumeric()
       .trim(),
-    body('confirmPassword').trim().custom((value , {req}) => {
-      if(value !== req.body.password){
-        throw new Error('Passwords do not match.');
-      }
-      return true;
-    })
+    body("confirmPassword")
+      .trim()
+      .custom((value, { req }) => {
+        if (value !== req.body.password) {
+          throw new Error("Passwords have to match!");
+        }
+        return true;
+      }),
   ],
   authController.postSignup
 );

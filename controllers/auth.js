@@ -25,10 +25,10 @@ exports.getLogin = (req, res, next) => {
     pageTitle: "Login",
     errorMessage: message,
     oldInput: {
-      email:'',
-      password:''
+      email: "",
+      password: "",
     },
-    validationErrors: []
+    validationErrors: [],
   });
 };
 
@@ -44,7 +44,6 @@ exports.getSignup = (req, res, next) => {
     pageTitle: "Signup",
     errorMessage: message,
     oldInput: {
-      name: "",
       email: "",
       password: "",
       confirmPassword: "",
@@ -67,7 +66,7 @@ exports.postLogin = (req, res, next) => {
         email: email,
         password: password,
       },
-      validationErrors: errors.array()
+      validationErrors: errors.array(),
     });
   }
 
@@ -77,12 +76,12 @@ exports.postLogin = (req, res, next) => {
         return res.status(422).render("auth/login", {
           path: "/login",
           pageTitle: "Login",
-          errorMessage: 'Invalid email or password',
+          errorMessage: "Invalid email or password",
           oldInput: {
             email: email,
             password: password,
           },
-          validationErrors: []
+          validationErrors: [],
         });
       }
       bcrypt
@@ -99,12 +98,12 @@ exports.postLogin = (req, res, next) => {
           return res.status(422).render("auth/login", {
             path: "/login",
             pageTitle: "Login",
-            errorMessage: 'Invalid email or password',
+            errorMessage: "Invalid email or password",
             oldInput: {
               email: email,
               password: password,
             },
-            validationErrors: []
+            validationErrors: [],
           });
         })
         .catch((err) => {
@@ -116,7 +115,6 @@ exports.postLogin = (req, res, next) => {
 };
 
 exports.postSignup = (req, res, next) => {
-  const name = req.body.name;
   const email = req.body.email;
   const password = req.body.password;
   // const confirmPassword = req.body.confirmPassword;
@@ -128,7 +126,6 @@ exports.postSignup = (req, res, next) => {
       pageTitle: "Signup",
       errorMessage: errors.array()[0].msg,
       oldInput: {
-        name: name,
         email: email,
         password: password,
         confirmPassword: req.body.confirmPassword,
@@ -141,7 +138,6 @@ exports.postSignup = (req, res, next) => {
     .hash(password, 12)
     .then((hashedPassword) => {
       const user = new User({
-        name: name,
         email: email,
         password: hashedPassword,
         cart: { items: [] },
@@ -250,6 +246,7 @@ exports.postNewPassword = (req, res, next) => {
   User.findOne({
     resetToken: passwordToken,
     resetTokenExpiration: { $gt: Date.now() },
+    _id: userId,
   })
     .then((user) => {
       resetUser = user;
@@ -264,5 +261,9 @@ exports.postNewPassword = (req, res, next) => {
     .then((result) => {
       res.redirect("/login");
     })
-    .catch((err) => console.log(err));
+    .catch((err) => {
+      const error = new Error(err);
+      error.httpStatusCode = 500;
+      return next(error);
+    });
 };

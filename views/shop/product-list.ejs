@@ -8,7 +8,6 @@
             <main>
                 <% if (prods.length> 0) { %>
                     <div class="grid">
-                        <% for (let i=0; i < 4; i++) { %>
                             <% for (let product of prods) { %>
                                 <article class="card product-item">
                                     <header class="card__header">
@@ -17,7 +16,7 @@
                                         </h1>
                                     </header>
                                     <div class="card__image">
-                                        <img src="<%= product.imageUrl %>" alt="<%= product.title %>">
+                                        <img src="/<%= product.imageUrl %>" alt="<%= product.title %>">
                                     </div>
                                     <div class="card__content">
                                         <h2 class="product__price">$
@@ -34,7 +33,12 @@
                                     </div>
                                 </article>
                                 <% } %>
-                                    <%}%>
+                    </div>
+                    <div>
+                        <section class="pagination">
+                            <a href="/products?page=1">1</a>
+                            <a href="/products?page=2">2</a>
+                        </section>
                     </div>
                     <% } else { %>
                         <h1>No Products Found!</h1>
