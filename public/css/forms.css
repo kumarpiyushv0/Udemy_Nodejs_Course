@@ -1,28 +1,104 @@
-.form-control {
-  margin: 1rem 0;
+/* Base styles */
+
+
+/* Main form container */
+.form-box {
+  width: 100%;
+  max-width: 500px;
+  padding: 2rem;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
 }
 
-.form-control label,
+/* Form container */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Your refined form-control style */
+.form-control {
+  width: 100%;
+  margin: 1.5rem 0;
+  background-color: #1e1e1e;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  color: #fff;
+}
+
+.form-control label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #bea94b;
+}
+
 .form-control input,
 .form-control textarea {
   display: block;
   width: 100%;
-  margin-bottom: 0.25rem;
-}
-
-.form-control input,
-.form-control textarea {
-  border: 1px solid #a1a1a1;
+  background-color: #2a2a2a;
+  border: 1px solid #bea94b;
+  border-radius: 8px;
   font: inherit;
-  border-radius: 2px;
+  padding: 0.75rem 1rem;
+  color: #fff;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
 .form-control input:focus,
 .form-control textarea:focus {
-  outline-color: #00695c;
+  outline: none;
+  border-color: #ffb75d;
+  background-color: #333;
 }
 
 .form-control input.invalid,
 .form-control textarea.invalid {
   border-color: red;
+  background-color: #3a1a1a;
+}
+
+/* Submit button */
+
+
+
+/* Link under form */
+.centered {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.centered p{
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 10px;
+}
+
+.centered a {
+  color: #bea94b;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.centered a:hover {
+  color: #ffb75d;
+}
+
+/* Error message */
+.user-message {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+}
+
+.user-message--error {
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 1px solid red;
+  color: red;
 }

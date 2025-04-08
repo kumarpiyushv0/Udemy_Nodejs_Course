@@ -8,7 +8,9 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Open Sans", sans-serif;
-  background: #1b1b1b;
+  color:#a54903;
+  background-image: url("../background.jpg");
+  background-size:cover;
 }
 
 main {
@@ -29,14 +31,16 @@ form {
   justify-content: center;
   align-items: center;
   text-align: center;
+  overflow: hidden;
   background-image: url("https://d1i1eo6qmdfmdv.cloudfront.net/upload/site/pages/newslider_otherpages/LosAngeles_McLaren_Ferrari_Lambo_Combo_Slider_1800x700.jpg");
   background-size: cover;
   background-position: center;
+  border-radius: 20px;
   color: white;
   padding: 100px 20px;
-  position: relative;
+  position:relative;
   height: 400px;
-  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.3);
 }
 
 .hero h1 {
@@ -118,7 +122,7 @@ form {
 .main-header__item a:hover,
 .main-header__item a:active,
 .main-header__item a.active {
-  color: #a54903;
+  color: #bea94b;
 }
 
 .mobile-nav {
@@ -162,7 +166,7 @@ form {
 .mobile-nav__item a:active,
 .mobile-nav__item a:hover,
 .mobile-nav__item a.active {
-  background: #00695c;
+  background: #bea94b;
   color: white;
   border-radius: 3px;
 }
@@ -206,11 +210,22 @@ form {
 }
 
 .card {
-  max-height: 50rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  border-radius: 20px;
-  background: #2a2a2a;
-  box-shadow: 10px 10px #222222c1;
+  background-color: #1e1e1e;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  color: #fff;
+  width: 300px;
+  margin: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
 }
 
 .card__header,
@@ -250,15 +265,15 @@ form {
   font: inherit;
   border: 1px solid #080707;
   color: #050504;
-  background: #c2661fcb;
+  background: #bea94b;
   border-radius: 100px;
   cursor: pointer;
 }
 
 .btn:hover,
 .btn:active {
-  background-color: #242424d0;
-  color: #a54903;
+  background-color: #000000d0;
+  color: #ffd000;
 }
 
 .user-message {
@@ -313,7 +328,7 @@ form {
 }
 .pagination a{
   text-decoration: none;
-  color:#a54903;
+  color:#bea94b;
   padding: 0.5rem;
   border: 1px solid #000000d0;
   margin:0 1rem;
@@ -323,5 +338,74 @@ form {
 .pagination a:hover,
 .pagination a:active{
   background-color: #242424d0;
-  color: #a54903;
+  color: #bea94b;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+main.details {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  color: white;
+}
+
+main.details h1 {
+  font-size: 2rem;
+  color: #f7931e;
+  margin-bottom: 1rem;
+}
+
+main.details hr {
+  border: none;
+  border-top: 2px solid #f7931e;
+  width: 60px;
+  margin: 1rem auto 2rem;
+}
+
+main.details .image img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1.5rem;
+}
+
+main.details h2 {
+  font-size: 1.5rem;
+  color: #ffb75d;
+  margin-bottom: 1rem;
+}
+
+main.details p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 2rem;
+}
+

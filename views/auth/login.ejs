@@ -30,10 +30,13 @@
                     value="<%= oldInput.password %>">
             </div>
             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-            <button class="btn" type="submit">Login</button>
+            
+            <div class="centered">
+                <button class="btn" type="submit">Login</button>
+                <p>Forgot password?  <a href="/reset"> <br>Reset Password</a></p>
+                
+            </div>
         </form>
-        <div class="centered">
-            <a href="/reset">Reset Password</a>
-        </div>
+        
     </main>
 <%- include('../includes/end.ejs') %>
